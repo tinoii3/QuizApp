@@ -12,9 +12,22 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int correctAnswers =
-        selectedAnswers.where((answer) => answer == 'correct').length;
-    int totalQuestions = 6;
+    final correctAnswers = [
+      'Widgets',
+      'By combining widgets in code',
+      'Update UI as data changes',
+      'StatelessWidget',
+      'The UI is not updated',
+      'By calling setState()',
+    ];
+
+    // คำนวณจำนวนคำตอบที่ถูกต้อง
+    int score = 0;
+    for (int i = 0; i < selectedAnswers.length; i++) {
+      if (selectedAnswers[i] == correctAnswers[i]) {
+        score++;
+      }
+    }
 
     return MaterialApp(
       home: Scaffold(
@@ -31,7 +44,7 @@ class ResultScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'You answered $correctAnswers out of $totalQuestions questions correctly!',
+                  'You answered $score out of ${correctAnswers.length} questions correctly!',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 24,
