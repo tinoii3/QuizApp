@@ -4,7 +4,6 @@ import 'package:myapp/data/quizz.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/result_screen.dart';
 
-
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
 
@@ -25,12 +24,10 @@ class _QuestionScreenState extends State<QuestionsScreen> {
         currentQuestionIndex++;
       } else {
         Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-              ResultScreen(selectedAnswers: selectedAnswers)
-          )
-        );
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    ResultScreen(selectedAnswers: selectedAnswers)));
       }
     });
   }
@@ -55,18 +52,15 @@ class _QuestionScreenState extends State<QuestionsScreen> {
                   Text(
                     currentQuestion.question,
                     style: GoogleFonts.lato(
-                      color: const Color.fromARGB(255, 201, 153, 251),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold
-                    ),
+                        color: const Color.fromARGB(255, 201, 153, 251),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 30),
                   ...currentQuestion.getShuffledAnswers().map((answer) {
                     return AnswerButton(
-                      answer: answer,
-                      onTap: () => answerQuestion(answer)
-                    );
+                        answer: answer, onTap: () => answerQuestion(answer));
                   })
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/question_summary.dart';
 import 'package:myapp/questions_screen.dart';
 
 class StartScreen extends StatelessWidget {
@@ -45,7 +46,8 @@ class StartScreen extends StatelessWidget {
                   'Start Quiz',
                   style: TextStyle(color: Colors.white),
                 ),
-              )
+              ),
+              const QuestionsScreen(),
             ],
           ),
         ),
