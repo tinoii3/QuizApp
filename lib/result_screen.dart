@@ -59,7 +59,7 @@ class ResultScreen extends StatelessWidget {
                     style: GoogleFonts.lato(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: const Color.fromARGB(255, 201, 153, 251),
                     ),
                   ),
                   QuestionSummary(summaryData: getSummaryData()),

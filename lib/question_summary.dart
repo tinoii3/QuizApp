@@ -16,8 +16,9 @@ class QuestionSummary extends StatelessWidget {
             ...summaryData.map(
               (data) {
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 15.0),
+                  padding: const EdgeInsets.only(bottom: 20.0),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         width: 30,
@@ -32,7 +33,7 @@ class QuestionSummary extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
-                    SizedBox(width: 10),
+                    SizedBox(width: 15),
                       Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,21 +42,22 @@ class QuestionSummary extends StatelessWidget {
                             '${data['question']}',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold, 
+                                fontSize: 18),
                           ),
                           Text(
                             '${data['user_answer']}',
                             style: TextStyle(
                                 color: Colors.red.shade100,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 30),
+                                fontSize: 12),
                           ),
                           Text(
                             '${data['correct_answer']}',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                                fontSize: 12),
                           ),
                         ],
                       ),

@@ -47,7 +47,6 @@ class StartScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              const QuestionsScreen(),
             ],
           ),
         ),
